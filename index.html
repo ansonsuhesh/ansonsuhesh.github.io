@@ -3,33 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anson Suhesh</title>
+    <title>Anson Suhesh S</title>
     <style>
-        /* Full-page gradient animation */
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            margin: 0;
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
             text-align: center;
             font-family: Arial, sans-serif;
             color: white;
-            font-size: 3rem;
+            animation: backgroundAnimation 10s infinite alternate;
+        }
+
+        h1 {
+            font-size: 4rem;
             font-weight: bold;
-            background: linear-gradient(-45deg, #ff6b6b, #f7b733, #4ecdc4, #556270);
-            background-size: 400% 400%;
-            animation: gradientAnimation 8s ease infinite;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 10px;
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background: linear-gradient(45deg, #ff416c, #ff4b2b); }
+            25% { background: linear-gradient(45deg, #ff9a44, #fc6076); }
+            50% { background: linear-gradient(45deg, #00c6ff, #0072ff); }
+            75% { background: linear-gradient(45deg, #6a11cb, #2575fc); }
+            100% { background: linear-gradient(45deg, #ff416c, #ff4b2b); }
         }
     </style>
 </head>
 <body>
-    Anson Suhesh
+    <div>
+        <h1>Anson Suhesh S</h1>
+        <h2>Lead Engineer - Sharcon Pty Ltd</h2>
+    </div>
 </body>
 </html>
