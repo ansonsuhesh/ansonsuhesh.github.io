@@ -3,10 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
+    <title>Anson Suhesh</title>
+    <style>
+        /* Full-page gradient animation */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(-45deg, #ff6b6b, #f7b733, #4ecdc4, #556270);
+            background-size: 400% 400%;
+            animation: gradientAnimation 8s ease infinite;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
-    <h2>Hi, I'm [Your Name]!</h2>
+    Anson Suhesh
 </body>
 </html>
