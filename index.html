@@ -58,15 +58,19 @@
             padding: 20px;
             text-align: center;
         }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
         .preview-buttons {
             display: flex;
             justify-content: center;
             gap: 10px;
             margin-top: 10px;
         }
-        .preview-buttons button {
-            padding: 10px;
-            font-size: 1em;
+        .preview-buttons img {
+            width: 100px;
+            height: auto;
             border: 1px solid black;
             cursor: pointer;
         }
@@ -87,17 +91,26 @@
             </div>
         </div>
         <div class="main-content">
-            <div class="header">PROJECT NAME</div>
-            <div class="image-container">
+            <div class="header" id="project-name">PROJECT NAME</div>
+            <div class="image-container" id="image-holder">
                 <p>IMAGE HOLDER</p>
             </div>
             <div class="preview-buttons">
-                <button>PREVIEW</button>
-                <button>PREVIEW</button>
-                <button>PREVIEW</button>
-                <button>PREVIEW</button>
+                <img src="my images/image1.jpg" alt="Image 1" onclick="showImage(this)">
+                <img src="my images/image2.jpg" alt="Image 2" onclick="showImage(this)">
+                <img src="my images/image3.jpg" alt="Image 3" onclick="showImage(this)">
+                <img src="my images/image4.jpg" alt="Image 4" onclick="showImage(this)">
             </div>
         </div>
     </div>
+
+    <script>
+        function showImage(element) {
+            const imageHolder = document.getElementById("image-holder");
+            const projectName = document.getElementById("project-name");
+            imageHolder.innerHTML = `<img src="${element.src}" alt="${element.alt}">`;
+            projectName.textContent = element.alt;
+        }
+    </script>
 </body>
 </html>
