@@ -24,8 +24,7 @@
         }
         .gallery {
             display: flex;
-            width: 400%;
-            animation: slide 10s infinite alternate ease-in-out;
+            transition: transform 0.5s ease-in-out;
         }
         .gallery img {
             width: 100%;
@@ -33,24 +32,55 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        @keyframes slide {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-100%); }
-            50% { transform: translateX(-200%); }
-            75% { transform: translateX(-300%); }
-            100% { transform: translateX(0); }
+        .controls {
+            margin-top: 10px;
+        }
+        .controls button {
+            padding: 10px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #304045;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
         }
     </style>
 </head>
 <body>
-    <h1>ANSON SUHESH S</h1>
+    <h1>Anson Suhesh S</h1>
     <div class="gallery-container">
-        <div class="gallery">
+        <div class="gallery" id="gallery">
             <img src="my images/image1.jpg" alt="Image 1">
             <img src="my images/image2.jpg" alt="Image 2">
             <img src="my images/image3.jpg" alt="Image 3">
             <img src="my images/image4.jpg" alt="Image 4">
         </div>
     </div>
+    <div class="controls">
+        <button onclick="prevSlide()">&#10094; Prev</button>
+        <button onclick="nextSlide()">Next &#10095;</button>
+    </div>
+
+    <script>
+        let index = 0;
+        const images = document.querySelectorAll('.gallery img');
+        const total = images.length;
+
+        function showSlide() {
+            const gallery = document.getElementById('gallery');
+            gallery.style.transform = `translateX(${-index * 100}%)`;
+        }
+
+        function nextSlide() {
+            index = (index + 1) % total;
+            showSlide();
+        }
+
+        function prevSlide() {
+            index = (index - 1 + total) % total;
+            showSlide();
+        }
+    </script>
 </body>
 </html>
